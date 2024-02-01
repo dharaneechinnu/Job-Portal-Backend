@@ -6,19 +6,17 @@ const mongoose = require('mongoose');
 const usermodel = require('./Model/User');
 const create = require('./Model/Create')
 const Private = require('./Model/private')
-
+app.use(cors());
 const vertoken = require('./Middleware/Jwt')
 const jwt = require('jsonwebtoken');
 
 const PORT = process.env.PORT || 3500;
 const MONGODB_URI = process.env.MONGODB_URI;
-
-require('dotenv').config()
 const jwtSecretKey = process.env.JWT_SECRET_KEY || 'default_secret_key';
 
 const app = express();
 
-app.use(cors());
+
 app.use(express.json()); // Add this line to parse JSON requests
 
 mongoose.connect(MONGODB_URI)
