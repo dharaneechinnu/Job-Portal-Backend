@@ -12,7 +12,6 @@ const jwt = require('jsonwebtoken');
 const PORT = process.env.PORT || 3522;
 const MONGODB_URI = process.env.MONGODB_URI;
 
-const app = express();
 
 
 app.use(cors());
