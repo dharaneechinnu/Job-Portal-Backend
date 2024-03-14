@@ -5,12 +5,14 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const create = require('./Model/Create')
 const Private = require('./Model/private')
-
+app.use(cors());
+const vertoken = require('./Middleware/Jwt')
 const jwt = require('jsonwebtoken');
 
 const PORT = process.env.PORT || 3522;
 const MONGODB_URI = process.env.MONGODB_URI;
 
+const app = express();
 
 
 app.use(cors());
